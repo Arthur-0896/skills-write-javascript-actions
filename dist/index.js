@@ -70251,7 +70251,7 @@ function error(message, properties = {}) {
  * @param properties optional properties to add to the annotation.
  */
 function warning(message, properties = {}) {
-    issueCommand('warning', toCommandProperties(properties), message instanceof Error ? message.toString() : message);
+    command_issueCommand('warning', utils_toCommandProperties(properties), message instanceof Error ? message.toString() : message);
 }
 /**
  * Adds a notice issue
@@ -70266,7 +70266,7 @@ function notice(message, properties = {}) {
  * @param message info message
  */
 function info(message) {
-    process.stdout.write(message + os.EOL);
+    process.stdout.write(message + external_os_.EOL);
 }
 /**
  * Begin an output group.
@@ -70359,7 +70359,8 @@ function getIDToken(aud) {
 
 async function run() {
   const joke = await src_joke();
-  console.log(joke);
+  info(joke);
+  warning("This is a serious joke!!");
   setOutput("joke", joke);
 }
 

@@ -3,7 +3,7 @@ import * as core from "@actions/core";
 
 async function run() {
   const joke = await getJoke();
-  console.log(joke);
+  core.info(joke);
   core.setOutput("joke", joke);
 }
 
